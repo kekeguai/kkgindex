@@ -25,8 +25,7 @@ kkgindex/
 本次优化在保留原有视觉与交互的前提下进行了以下改进：
 
 ### 性能与可靠性
-- **资源全部本地化**：原页面引用 `s2.loli.net` 图床 5 张图片、`js.007.al` CDN 的 jQuery，
-  现全部改为本地文件，消除第三方依赖（图床失效 / CDN 不稳定 / 跨境请求慢等风险）。
+- **资源全部本地化**：全部改为本地文件，消除第三方依赖（图床失效 / CDN 不稳定 / 跨境请求慢等风险）。
 - **脚本延迟加载**：所有 `<script>` 添加 `defer`，HTML 解析不再被 JS 阻塞。
 - **首屏图片预加载**：`<link rel="preload">` 提前加载 Banner 背景图（LCP 关键资源）。
 - **清理无用资源**：将 `bg_1~bg_5` 中已使用的背景图整理为带语义名称的 `banner-bg` / `tile-*` 文件，删除重复副本及未被引用的 `pic01/02/04/05/06`、`banner.jpg`；项目体积从约 10MB 降至约 5MB。
@@ -46,7 +45,6 @@ kkgindex/
   npm install -g sass
   sass assets/sass/main.scss assets/css/main.css --style compressed
   ```
-- **更换站点域名**：搜索 `index.html` 中的 `333361.xyz`（canonical / og:url / og:image）。
 
 ## 部署
 
